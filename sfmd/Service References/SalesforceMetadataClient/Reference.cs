@@ -18331,7 +18331,7 @@ namespace sfmd.SalesforceMetadataClient {
         
         private LayoutSectionStyle layoutSectionStyleField;
         
-        private QuickActionLayoutItem[][] quickActionLayoutColumnsField;
+        private QuickActionLayoutItem[] quickActionLayoutColumnsField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -18348,7 +18348,7 @@ namespace sfmd.SalesforceMetadataClient {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
         [System.Xml.Serialization.XmlArrayItemAttribute("quickActionLayoutItems", typeof(QuickActionLayoutItem), IsNullable=false)]
-        public QuickActionLayoutItem[][] quickActionLayoutColumns {
+        public QuickActionLayoutItem[] quickActionLayoutColumns {
             get {
                 return this.quickActionLayoutColumnsField;
             }
@@ -61718,7 +61718,7 @@ namespace sfmd.SalesforceMetadataClient {
         
         private string masterLabelField;
         
-        private NavigationMenuItem[][] navigationLinkSetField;
+        private NavigationMenuItem[] navigationLinkSetField;
         
         private CommunityTemplatePageSetting[] pageSettingField;
         
@@ -61845,7 +61845,7 @@ namespace sfmd.SalesforceMetadataClient {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Order=8)]
         [System.Xml.Serialization.XmlArrayItemAttribute("navigationMenuItem", typeof(NavigationMenuItem), IsNullable=false)]
-        public NavigationMenuItem[][] navigationLinkSet {
+        public NavigationMenuItem[] navigationLinkSet {
             get {
                 return this.navigationLinkSetField;
             }

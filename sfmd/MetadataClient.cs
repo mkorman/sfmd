@@ -16,6 +16,7 @@ namespace sfmd
         public string Token { get; set; }
         public string SessionId { get; set; }
         public string MetadataUrl { get; set; }
+        public string EnterpriseUrl { get; set; }
 
         private MetadataPortTypeClient client;
 
@@ -32,7 +33,16 @@ namespace sfmd
 
             SessionId = loginResult.sessionId;
             MetadataUrl = loginResult.metadataServerUrl;
-            //Console.WriteLine($"Logged in. Session ID is {SessionId} and URL is {MetadataUrl}");
+            EnterpriseUrl = loginResult.serverUrl;
+            Console.WriteLine($"Logged in with session ID: {SessionId}");
+        }
+
+        public void Logout()
+        {
+            if (SessionId == null) return;
+            var soapClient = new SoapClient("Soap", EnterpriseUrl);
+            soapClient.logout(new SalesforceEnterpriseClient.SessionHeader {sessionId = SessionId});
+            Console.WriteLine($"Logged out of session ID {SessionId}");
         }
 
         public Metadata[] GetMetadata(string type, string[] names)
@@ -95,6 +105,7 @@ namespace sfmd
 
             sb.AppendLine(obj.fullName);
             sb.AppendLine($"  Name field: {obj.nameField}");
+            obj.fields.ToList().ForEach(field => sb.AppendLine($"  field: {field.fullName}"));
 
             return sb.ToString();
         }

@@ -49,3 +49,4 @@ sfmd/.vs/sfmd/v14/.suo
 bin
 obj
 *.csproj.user
+packages

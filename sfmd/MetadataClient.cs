@@ -43,7 +43,7 @@ namespace sfmd
             Console.WriteLine($"Logged out of session ID {SessionId}");
         }
 
-        public Metadata[] GetcustomObjects(string[] names)
+        public Metadata[] GetCustomObjects(string[] names)
         {
             return GetMetadata("CustomObject", names);
         }

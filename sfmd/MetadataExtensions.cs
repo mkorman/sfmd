@@ -4,9 +4,9 @@ using sfmd.SalesforceMetadataClient;
 
 namespace sfmd
 {
-    public class MetadataHelper
+    public static class MetadataExtensions
     {
-        public static string ToFriendlyString(SaveResult result)
+        public static string ToFriendlyString(this SaveResult result)
         {
             var sb = new StringBuilder();
 
@@ -20,7 +20,7 @@ namespace sfmd
             return sb.ToString();
         }
 
-        public static string ToFriendlyString(CustomObject obj)
+        public static string ToFriendlyString(this CustomObject obj)
         {
             var sb = new StringBuilder();
 

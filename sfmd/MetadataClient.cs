@@ -2,9 +2,7 @@
 using System;
 using System.Linq;
 using System.Net;
-using System.Text;
 using sfmd.SalesforceEnterpriseClient;
-using SaveResult = sfmd.SalesforceMetadataClient.SaveResult;
 using SessionHeader = sfmd.SalesforceMetadataClient.SessionHeader;
 
 namespace sfmd
@@ -55,10 +53,8 @@ namespace sfmd
             client = new MetadataPortTypeClient("Metadata", MetadataUrl);
             var sessionHeader = new SessionHeader { sessionId = SessionId };
             var metadata = client.readMetadata(sessionHeader, null, type, names);
-            metadata.ToList().ForEach(md => Console.WriteLine(MetadataHelper.ToFriendlyString((CustomObject)md)));
+            metadata.ToList().ForEach(md => Console.WriteLine(((CustomObject)md).ToFriendlyString()));
             return metadata;
-            //metadata = client.readMetadata(sessionHeader, null, "ApexClass", new[] { "ActionProcessor", "AgentDetails" });
-            //metadata.ToList().ForEach(md => Console.WriteLine($"Class: {md.fullName}, ApiVersion: {((ApexClass)md).apiVersion}"));
         }
 
         public void CreateCustomObject(string name, string label, string pluralLabel)
@@ -87,7 +83,7 @@ namespace sfmd
             customObject.nameField = nameField;
 
             var result = client.createMetadata(sessionHeader, null, null, new Metadata[] {customObject});
-            result.ToList().ForEach(res => Console.WriteLine(MetadataHelper.ToFriendlyString(res)));
+            result.ToList().ForEach(res => Console.WriteLine(res.ToFriendlyString()));
         }
     }
 }

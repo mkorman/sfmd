@@ -7,7 +7,7 @@ using SessionHeader = sfmd.SalesforceMetadataClient.SessionHeader;
 
 namespace sfmd
 {
-    class MetadataClient
+    public class MetadataClient : IDisposable
     {
         public string Username { get; set; }
         public string Password { get; set; }
@@ -22,6 +22,20 @@ namespace sfmd
         {
             // SF requires TLS 1.1 or 1.2
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                Logout();
+            }
         }
 
         public void Login()

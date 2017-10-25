@@ -31,23 +31,25 @@ namespace sfmd
                 return;
             }
 
-            var metadataClient = CreateMetadataClient();
-            metadataClient.Login();
-
-            switch (invokedVerb)
+            using (var metadataClient = CreateMetadataClient())
             {
-                case "get":
+                metadataClient.Login();
+
+                switch (invokedVerb)
+                {
+                    case "get":
                         metadataClient.GetCustomObjects(((GetSubOptions)invokedVerbInstance).ObjectNames);
-                    break;
-                case "create":
-                        var createOptions = (CreateSubOptions) invokedVerbInstance;
-                        metadataClient.CreateCustomObject(createOptions.ObjectType, createOptions.Label, createOptions.PluralLabel);
-                    break;
-                default:
+                        break;
+                    case "create":
+                        var createOptions = (CreateSubOptions)invokedVerbInstance;
+                        metadataClient.CreateCustomObject(createOptions.ObjectType, createOptions.Label,
+                            createOptions.PluralLabel);
+                        break;
+                    default:
                         Console.WriteLine("Unsupported verb");
-                    break;
+                        break;
+                }
             }
-            metadataClient.Logout();
             Console.ReadLine();
         }
     }

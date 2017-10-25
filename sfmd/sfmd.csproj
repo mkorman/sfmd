@@ -34,7 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,9 +48,470 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MetadataClient.cs" />
+    <Compile Include="Service References\SalesforceEnterpriseClient\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SalesforceMetadataClient\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Service References\SalesforceEnterpriseClient\enterprise.wsdl" />
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.changeOwnPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.ChangeOwnPasswordResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.convertLeadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.createResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DebuggingInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.deleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DeleteResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeAllTabsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeAppMenuItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeAppMenuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeApprovalLayout.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeApprovalLayoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeAvailableQuickActionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeAvailableQuickActionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeCompactLayout.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeCompactLayoutsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeCompactLayoutsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeDataCategoryGroupResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeDataCategoryGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeDataCategoryGroupStructureResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeDataCategoryGroupStructuresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeGlobalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeGlobalResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeGlobalTheme.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeGlobalThemeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeKnowledgeSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeLayoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeLayoutResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeNounResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeNounsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribePathAssistant.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describePathAssistantsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describePrimaryCompactLayoutsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeQuickActionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeQuickActionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeSearchableEntitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeSearchableEntityResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeSearchLayoutResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeSearchLayoutsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeSearchScopeOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeSearchScopeOrderResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeSObjectListViewsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeSObjectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeSObjectResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeSObjectsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeSoftphoneLayoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeSoftphoneLayoutResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeSoqlListView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeSoqlListViewsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeTab.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeTabSetResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeTabsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeThemeItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeThemeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.describeVisualForceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.DescribeVisualForceResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.emptyRecycleBinResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.EmptyRecycleBinResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.executeListViewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.ExecuteListViewResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.findDuplicatesByIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.findDuplicatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.FindDuplicatesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.getDeletedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.GetDeletedResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.getServerTimestampResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.GetServerTimestampResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.getUpdatedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.GetUpdatedResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.getUserInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.GetUserInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.invalidateSessionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.InvalidateSessionsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.KnowledgeSettings.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.LeadConvertResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.LimitInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.loginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.LoginResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.logoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.mergeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.MergeResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.PerformQuickActionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.performQuickActionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.processResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.ProcessResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.queryAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.queryMoreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.queryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.QueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.QuickActionTemplateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.renderEmailTemplateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.RenderEmailTemplateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.renderStoredEmailTemplateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.RenderStoredEmailTemplateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.resetPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.ResetPasswordResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.retrieveQuickActionTemplatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.retrieveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.SaveResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.searchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.SearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.sendEmailMessageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.sendEmailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.SendEmailResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.setPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.SetPasswordResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.sObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.undeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.UndeleteResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.updateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.upsertResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceEnterpriseClient\sfmd.SalesforceEnterpriseClient.UpsertResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\metadata-api.wsdl" />
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.AsyncResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.cancelDeployResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.CancelDeployResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.checkDeployStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.checkRetrieveStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.createMetadataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.DebuggingInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.deleteMetadataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.DeleteResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.deployRecentValidationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.deployResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.DeployResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.describeMetadataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.DescribeMetadataResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.describeValueTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.DescribeValueTypeResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.FileProperties.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.listMetadataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.Metadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.readMetadataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.renameMetadataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.retrieveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.RetrieveResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.SaveResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.updateMetadataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.upsertMetadataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalesforceMetadataClient\sfmd.SalesforceMetadataClient.UpsertResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SalesforceEnterpriseClient\" />
+    <WCFMetadataStorage Include="Service References\SalesforceMetadataClient\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SalesforceEnterpriseClient\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SalesforceEnterpriseClient\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SalesforceEnterpriseClient\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SalesforceMetadataClient\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SalesforceMetadataClient\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SalesforceMetadataClient\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

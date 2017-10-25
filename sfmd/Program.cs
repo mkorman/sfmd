@@ -24,8 +24,8 @@ namespace sfmd
         {
             var metadataClient = CreateMetadataClient();
             metadataClient.Login();
-            metadataClient.GetMetadata("CustomObject", new[] { "NvmNodes__c", "Contact", "Account" });
-            //metadataClient.GetMetadata("CustomObject", new[] { "Contact" });
+            metadataClient.GetMetadata("CustomObject", new[] { "Product_Category__c", "Contact", "Account" });
+            metadataClient.CreateCustomObject("My_Second_Object", "My custom object", "My custom objects");
             Console.ReadLine();
         }
     }

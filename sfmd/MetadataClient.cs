@@ -45,12 +45,17 @@ namespace sfmd
             Console.WriteLine($"Logged out of session ID {SessionId}");
         }
 
+        public Metadata[] GetcustomObjects(string[] names)
+        {
+            return GetMetadata("CustomObject", names);
+        }
+
         public Metadata[] GetMetadata(string type, string[] names)
         {
             client = new MetadataPortTypeClient("Metadata", MetadataUrl);
             var sessionHeader = new SessionHeader { sessionId = SessionId };
             var metadata = client.readMetadata(sessionHeader, null, type, names);
-            metadata.ToList().ForEach(md => Console.WriteLine(ToFriendlyString((CustomObject)md)));
+            metadata.ToList().ForEach(md => Console.WriteLine(MetadataHelper.ToFriendlyString((CustomObject)md)));
             return metadata;
             //metadata = client.readMetadata(sessionHeader, null, "ApexClass", new[] { "ActionProcessor", "AgentDetails" });
             //metadata.ToList().ForEach(md => Console.WriteLine($"Class: {md.fullName}, ApiVersion: {((ApexClass)md).apiVersion}"));
@@ -82,32 +87,7 @@ namespace sfmd
             customObject.nameField = nameField;
 
             var result = client.createMetadata(sessionHeader, null, null, new Metadata[] {customObject});
-            result.ToList().ForEach(res => Console.WriteLine(ToFriendlyString(res)));
-        }
-
-        public static string ToFriendlyString(SaveResult result)
-        {
-            var sb = new StringBuilder();
-
-            sb.Append(result.fullName);
-            sb.Append(": ");
-            sb.Append(result.success ? "Success!" : "Failure: ");
-            if (result.errors != null)
-            {
-                sb.Append(string.Join(",", result.errors.Select(err => $"{err.message}: {err.extendedErrorDetails}")));
-            }
-            return sb.ToString();
-        }
-
-        public static string ToFriendlyString(CustomObject obj)
-        {
-            var sb = new StringBuilder();
-
-            sb.AppendLine(obj.fullName);
-            sb.AppendLine($"  Name field: {obj.nameField}");
-            obj.fields.ToList().ForEach(field => sb.AppendLine($"  field: {field.fullName}"));
-
-            return sb.ToString();
+            result.ToList().ForEach(res => Console.WriteLine(MetadataHelper.ToFriendlyString(res)));
         }
     }
 }

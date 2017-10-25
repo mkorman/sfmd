@@ -37,7 +37,7 @@ namespace sfmd
             switch (invokedVerb)
             {
                 case "get":
-                    metadataClient.GetMetadata("CustomObject", ((GetSubOptions)invokedVerbInstance).ObjectNames);
+                    metadataClient.GetcustomObjects(((GetSubOptions)invokedVerbInstance).ObjectNames);
                     break;
                 case "create":
                     metadataClient.CreateCustomObject("My_Second_Object", "My custom object", "My custom objects");

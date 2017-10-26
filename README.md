@@ -10,6 +10,10 @@ Edit the `App.config` file and configure your username, password and token. You'
 
 To get custom object metadata (including standard objects too), type
 
+`sfmd get -o <object types>`
+
+For instance:
+
 `sfmd get -o Account Contact Lead`
 
 ### Creating metadata

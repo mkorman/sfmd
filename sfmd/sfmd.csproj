@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="CommandLineOptions.cs" />
     <Compile Include="CreateSubOptions.cs" />
+    <Compile Include="DeleteSubOptions.cs" />
     <Compile Include="GetSubOptions.cs" />
     <Compile Include="MetadataExtensions.cs" />
     <Compile Include="Program.cs" />

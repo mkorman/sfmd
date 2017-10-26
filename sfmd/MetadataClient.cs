@@ -107,6 +107,11 @@ namespace sfmd
             return result;
         }
 
+        public DeleteResult[] DeleteCustomObjects(string[] names)
+        {
+            return DeleteMetadata("CustomObject", names);
+        }
+
         public DeleteResult[] DeleteMetadata(string type, string[] names)
         {
             client = new MetadataPortTypeClient("Metadata", MetadataUrl);

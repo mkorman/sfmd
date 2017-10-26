@@ -38,12 +38,15 @@ namespace sfmd
                 switch (invokedVerb)
                 {
                     case "get":
-                        metadataClient.GetCustomObjects(((GetSubOptions)invokedVerbInstance).ObjectNames);
+                        metadataClient.GetCustomObjects(((GetSubOptions)invokedVerbInstance).ObjectTypes);
                         break;
                     case "create":
                         var createOptions = (CreateSubOptions)invokedVerbInstance;
                         metadataClient.CreateCustomObject(createOptions.ObjectType, createOptions.Label,
                             createOptions.PluralLabel);
+                        break;
+                    case "delete":
+                        metadataClient.DeleteCustomObjects(((DeleteSubOptions)invokedVerbInstance).ObjectTypes);
                         break;
                     default:
                         Console.WriteLine("Unsupported verb");

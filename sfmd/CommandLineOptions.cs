@@ -14,5 +14,8 @@ namespace sfmd
 
         [VerbOption("create", HelpText = "Create metadata in your org.")]
         public CreateSubOptions CreateSubOptions { get; set; }
+
+        [VerbOption("delete", HelpText = "Delete metadata in your org.")]
+        public DeleteSubOptions DeleteSubOptions { get; set; }
     }
 }

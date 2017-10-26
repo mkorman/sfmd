@@ -3,6 +3,8 @@ using System;
 using System.Linq;
 using System.Net;
 using sfmd.SalesforceEnterpriseClient;
+using DeleteResult = sfmd.SalesforceMetadataClient.DeleteResult;
+using SaveResult = sfmd.SalesforceMetadataClient.SaveResult;
 using SessionHeader = sfmd.SalesforceMetadataClient.SessionHeader;
 
 namespace sfmd
@@ -71,11 +73,8 @@ namespace sfmd
             return metadata;
         }
 
-        public void CreateCustomObject(string name, string label, string pluralLabel)
+        public SaveResult[] CreateCustomObject(string name, string label, string pluralLabel)
         {
-            client = new MetadataPortTypeClient("Metadata", MetadataUrl);
-            var sessionHeader = new SessionHeader { sessionId = SessionId };
-
             var customObject = new CustomObject {
                 fullName = name + "__c",
                 label = label,
@@ -96,8 +95,25 @@ namespace sfmd
 
             customObject.nameField = nameField;
 
-            var result = client.createMetadata(sessionHeader, null, null, new Metadata[] {customObject});
+            return CreateMetadata(new Metadata[] {customObject});
+        }
+
+        public SaveResult[] CreateMetadata(Metadata[] objects)
+        {
+            client = new MetadataPortTypeClient("Metadata", MetadataUrl);
+            var sessionHeader = new SessionHeader { sessionId = SessionId };
+            var result = client.createMetadata(sessionHeader, null, null, objects);
             result.ToList().ForEach(res => Console.WriteLine(res.ToFriendlyString()));
+            return result;
+        }
+
+        public DeleteResult[] DeleteMetadata(string type, string[] names)
+        {
+            client = new MetadataPortTypeClient("Metadata", MetadataUrl);
+            var sessionHeader = new SessionHeader { sessionId = SessionId };
+            var result = client.deleteMetadata(sessionHeader, null, null, type, names);
+            result.ToList().ForEach(res => Console.WriteLine(res.ToFriendlyString()));
+            return result;
         }
     }
 }

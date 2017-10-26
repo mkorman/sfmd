@@ -20,6 +20,20 @@ namespace sfmd
             return sb.ToString();
         }
 
+        public static string ToFriendlyString(this DeleteResult result)
+        {
+            var sb = new StringBuilder();
+
+            sb.Append(result.fullName);
+            sb.Append(": ");
+            sb.Append(result.success ? "Success!" : "Failure: ");
+            if (result.errors != null)
+            {
+                sb.Append(string.Join(",", result.errors.Select(err => $"{err.message}: {err.extendedErrorDetails}")));
+            }
+            return sb.ToString();
+        }
+
         public static string ToFriendlyString(this CustomObject obj)
         {
             var sb = new StringBuilder();

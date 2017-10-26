@@ -61,7 +61,9 @@ namespace sfmd
 
         public Metadata[] GetCustomObjects(string[] names)
         {
-            return GetMetadata("CustomObject", names);
+            var result = GetMetadata("CustomObject", names);
+            result.ToList().ForEach(md => Console.WriteLine(((CustomObject)md).ToFriendlyString()));
+            return result;
         }
 
         public Metadata[] GetMetadata(string type, string[] names)
@@ -69,7 +71,6 @@ namespace sfmd
             client = new MetadataPortTypeClient("Metadata", MetadataUrl);
             var sessionHeader = new SessionHeader { sessionId = SessionId };
             var metadata = client.readMetadata(sessionHeader, null, type, names);
-            metadata.ToList().ForEach(md => Console.WriteLine(((CustomObject)md).ToFriendlyString()));
             return metadata;
         }
 

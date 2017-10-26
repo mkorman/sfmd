@@ -40,8 +40,7 @@ namespace sfmd
 
             sb.AppendLine(obj.fullName);
             sb.AppendLine($"  Name field: {obj.nameField}");
-            obj.fields.ToList().ForEach(field => sb.AppendLine($"  field: {field.fullName}"));
-
+            obj.fields?.ToList().ForEach(field => sb.AppendLine($"  field: {field.fullName}"));
             return sb.ToString();
         }
     }

@@ -14,9 +14,9 @@ namespace sfmd
         public string Username { get; set; }
         public string Password { get; set; }
         public string Token { get; set; }
-        public string SessionId { get; set; }
-        public string MetadataUrl { get; set; }
-        public string EnterpriseUrl { get; set; }
+        private string SessionId { get; set; }
+        private string MetadataUrl { get; set; }
+        private string EnterpriseUrl { get; set; }
 
         private MetadataPortTypeClient client;
 

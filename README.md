@@ -1,7 +1,7 @@
 # sfmd: Salesforce metadata utility
 A .Net client to query and modify Salesforce metadata from the command-line. Initially limited to Custom Object metadata only.
 
-This is intended as an end-to-end proof of concept showing how to integrate C# and the Salesforce Metadata API.
+This is intended as an end-to-end proof of concept showing how to integrate C# and the Salesforce Metadata API. Nevertheless, it is still a usable tool that allows you to retrieve some limited metadata information.
 
 ## Configuration
 Edit the `App.config` file and configure your username, password and token. You're ready to use sfmd
